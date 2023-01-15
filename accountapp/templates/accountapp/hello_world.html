@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="height: 10rem; background-color: #38df81; border-radius: 1rem;margin: 2rem">
-        <h1>
-            testing
+    <div style="border-radius: 1rem;margin: 2rem; text-align: center">
+        <h1 style="font-family: 'lobster',cursive;">
+            Hello World List!
         </h1>
 
         <form action="/account/hello_world/" method="post">
             {% csrf_token %}
-            <input type="submit" class="btn btn-primary" value="POST"> #부트스트랩 라이브러리 안에있는 클래스 두개
+            <div>
+                <input type="text" name="hello_world_input">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="POST"> {#부트스트랩 라이브러리 안에있는 클래스 두개#}
+            </div>
+
+            {% if hello_world_output %}
+            <h1>
+                {{ hello_world_output.text }}
+            </h1>
+            {% endif %}
         </form>
 
-        <h1>
-            {{ text }}
-        </h1>
+
     </div>
 {% endblock %}
 
