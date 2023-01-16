@@ -15,10 +15,12 @@
                 <input type="submit" class="btn btn-primary" value="POST"> {#부트스트랩 라이브러리 안에있는 클래스 두개#}
             </div>
 
-            {% if hello_world_output %}
-            <h1>
-                {{ hello_world_output.text }}
-            </h1>
+            {% if hello_world_list %}
+                {% for hello_world in hello_world_list %}
+                <h4>
+                    {{ hello_world.text }}
+                </h4>
+                {% endfor %}
             {% endif %}
         </form>
 
